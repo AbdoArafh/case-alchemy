@@ -81,8 +81,6 @@ describe('index', () => {
   describe('TranformCase', () => {
     Object.values(cases).forEach(baseCase =>
       Object.values(cases).forEach(targetCase => {
-        // if (baseCase.noTest || targetCase.noTest) return;
-
         it(`should transform from ${baseCase.name} to ${targetCase.name}`, () => {
           const baseToTarget = TransformCase(
             baseCase.fromFunc,
@@ -93,10 +91,5 @@ describe('index', () => {
         });
       })
     );
-
-    // it("should transform from lowercase to uppercase", () => {
-    //   const lowerToUpper = TransformCase(fromLower, toUpper);
-    //   expect(lowerToUpper("helloworld"))
-    // })
   });
 });
