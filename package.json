@@ -1,7 +1,7 @@
 {
-  "name": "typescript-npm-package-template",
+  "name": "case-alchemy",
   "version": "0.0.0-development",
-  "description": "A template for creating npm packages using TypeScript and VSCode",
+  "description": "A light-weight, fast, tree-shakable library for effortless text case transformations with a touch of magic.",
   "main": "./lib/index.js",
   "files": [
     "lib/**/*"
@@ -19,32 +19,42 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryansonshine/typescript-npm-package-template.git"
+    "url": "git+https://github.com/AbdoArafh/case-alchemy.git"
   },
   "license": "MIT",
   "author": {
-    "name": "Ryan Sonshine",
-    "email": "ryansonshine@users.noreply.github.com",
-    "url": "https://github.com/ryansonshine"
+    "name": "Abdurrahman Arafh",
+    "email": "abdoarafh54@gmail.com",
+    "url": "https://github.com/AbdoArafh"
   },
   "engines": {
     "node": ">=12.0"
   },
   "keywords": [
-    "boilerplate",
-    "template",
-    "typescript",
-    "vscode",
-    "jest",
-    "husky",
-    "commitizen",
-    "semantic-release",
-    "codecov"
+    "case",
+    "text",
+    "transform",
+    "string",
+    "manipulation",
+    "conversion",
+    "camel",
+    "kebab",
+    "snake",
+    "title",
+    "library",
+    "utility",
+    "javascript",
+    "npm",
+    "package",
+    "tree-shakable",
+    "lightweight",
+    "fast",
+    "magic"
   ],
   "bugs": {
-    "url": "https://github.com/ryansonshine/typescript-npm-package-template/issues"
+    "url": "https://github.com/AbdoArafh/case-alchemy/issues"
   },
-  "homepage": "https://github.com/ryansonshine/typescript-npm-package-template#readme",
+  "homepage": "https://github.com/AbdoArafh/case-alchemy#readme",
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
