@@ -1,6 +1,6 @@
 {
   "name": "case-alchemy",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "description": "A light-weight, fast, tree-shakable library for effortless text case transformations with a touch of magic.",
   "main": "./lib/index.js",
   "files": [
@@ -14,6 +14,7 @@
     "prepare": "husky install",
     "semantic-release": "semantic-release",
     "test:watch": "jest --watch",
+    "dev": "jest --watch",
     "test": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
