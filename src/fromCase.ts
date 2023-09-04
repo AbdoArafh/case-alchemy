@@ -11,5 +11,5 @@ export const fromSnake: FromCaseFunction = str => str.split('_').map(lower);
 export const fromTitle: FromCaseFunction = str => str.split(' ').map(lower);
 export const fromSentence: FromCaseFunction = str => str.split(' ').map(lower);
 export const fromConstant: FromCaseFunction = str => str.split('_').map(lower);
-export const fromUpper: FromCaseFunction = str => [lower(str)];
-export const fromLower: FromCaseFunction = str => [lower(str)];
+export const fromUpper: FromCaseFunction = str => str.split(' ').map(lower);
+export const fromLower: FromCaseFunction = str => str.split(' ').map(lower);

@@ -18,104 +18,85 @@ import {
   toLower,
 } from '../src';
 
+const cases = {
+  camel: {
+    fromFunc: fromCamel,
+    toFunc: toCamel,
+    name: 'camelCase',
+    text: 'helloWorld',
+    noTest: false,
+  },
+  kebab: {
+    fromFunc: fromKebab,
+    toFunc: toKebab,
+    name: 'kebab-case',
+    text: 'hello-world',
+    noTest: false,
+  },
+  snake: {
+    fromFunc: fromSnake,
+    toFunc: toSnake,
+    name: 'snake_case',
+    text: 'hello_world',
+    noTest: false,
+  },
+  title: {
+    fromFunc: fromTitle,
+    toFunc: toTitle,
+    name: 'Title Case',
+    text: 'Hello World',
+    noTest: false,
+  },
+  sentence: {
+    fromFunc: fromSentence,
+    toFunc: toSentence,
+    name: 'Sentence case',
+    text: 'Hello world',
+    noTest: false,
+  },
+  constant: {
+    fromFunc: fromConstant,
+    toFunc: toConstant,
+    name: 'CONSTANT_CASE',
+    text: 'HELLO_WORLD',
+    noTest: false,
+  },
+  lower: {
+    fromFunc: fromLower,
+    toFunc: toLower,
+    name: 'lowercase',
+    text: 'hello world',
+    noTest: true,
+  },
+  upper: {
+    fromFunc: fromUpper,
+    toFunc: toUpper,
+    name: 'UPPERCASE',
+    text: 'HELLO WORLD',
+    noTest: true,
+  },
+} as const;
+
 describe('index', () => {
   describe('TranformCase', () => {
-    it('should transform from kebab-case to camelCase', () => {
-      const text = 'hello-world';
-      const kebabToCamel = TransformCase(fromKebab, toCamel);
-      const result = kebabToCamel(text);
-      expect(result).toMatch('helloWorld');
-    });
+    Object.values(cases).forEach(baseCase =>
+      Object.values(cases).forEach(targetCase => {
+        // if (baseCase.noTest || targetCase.noTest) return;
 
-    it('should transform from camelCase to kebab-case', () => {
-      const text = 'helloWorld';
-      const camelToKebab = TransformCase(fromCamel, toKebab);
-      const result = camelToKebab(text);
-      expect(result).toMatch('hello-world');
-    });
+        it(`should transform from ${baseCase.name} to ${targetCase.name}`, () => {
+          const baseToTarget = TransformCase(
+            baseCase.fromFunc,
+            targetCase.toFunc
+          );
+          const result = baseToTarget(baseCase.text);
+          expect(result).toMatch(targetCase.text);
+        });
+      })
+    );
 
-    it('should transform from snake_case to CamelCase', () => {
-      const text = 'hello_world';
-      const snakeToCamel = TransformCase(fromSnake, toCamel);
-      const result = snakeToCamel(text);
-      expect(result).toMatch('helloWorld');
-    });
-
-    it('should transform from camelCase to snake_case', () => {
-      const text = 'helloWorld';
-      const camelToSnake = TransformCase(fromCamel, toSnake);
-      const result = camelToSnake(text);
-      expect(result).toMatch('hello_world');
-    });
-
-    it('should transform from Title Case to camelCase', () => {
-      const text = 'Hello World';
-      const titleToCamel = TransformCase(fromTitle, toCamel);
-      const result = titleToCamel(text);
-      expect(result).toMatch('helloWorld');
-    });
-
-    it('should transform from camelCase to Title Case', () => {
-      const text = 'helloWorld';
-      const camelToTitle = TransformCase(fromCamel, toTitle);
-      const result = camelToTitle(text);
-      expect(result).toMatch('Hello World');
-    });
-
-    it('should transform from Sentence case to camelCase', () => {
-      const text = 'Hello world';
-      const sentenceToCamel = TransformCase(fromSentence, toCamel);
-      const result = sentenceToCamel(text);
-      expect(result).toMatch('helloWorld');
-    });
-
-    it('should transform from camelCase to Sentence case', () => {
-      const text = 'helloWorld';
-      const camelToSentence = TransformCase(fromCamel, toSentence);
-      const result = camelToSentence(text);
-      expect(result).toMatch('Hello world');
-    });
-
-    it('should transform from CONSTANT_CASE to camelCase', () => {
-      const text = 'HELLO_WORLD';
-      const constantToCamel = TransformCase(fromConstant, toCamel);
-      const result = constantToCamel(text);
-      expect(result).toMatch('helloWorld');
-    });
-
-    it('should transform from camelCase to CONSTANT_CASE', () => {
-      const text = 'helloWorld';
-      const camelToConstant = TransformCase(fromCamel, toConstant);
-      const result = camelToConstant(text);
-      expect(result).toMatch('HELLO_WORLD');
-    });
-
-    it('should transform from lowercase to camelCase', () => {
-      const text = 'helloworld';
-      const lowerToCamel = TransformCase(fromLower, toCamel);
-      const result = lowerToCamel(text);
-      expect(result).toMatch('helloworld');
-    });
-
-    it('should transform from camelCase to lowercase', () => {
-      const text = 'helloWorld';
-      const camelToLower = TransformCase(fromCamel, toLower);
-      const result = camelToLower(text);
-      expect(result).toMatch('helloworld');
-    });
-
-    it('should transform from UPPERCASE to camelCase', () => {
-      const text = 'HELLOWORLD';
-      const upperToCamel = TransformCase(fromUpper, toCamel);
-      const result = upperToCamel(text);
-      expect(result).toMatch('helloworld');
-    });
-
-    it('should transform from camelCase to UPPERCASE', () => {
-      const text = 'helloWorld';
-      const camelToUpper = TransformCase(fromCamel, toUpper);
-      const result = camelToUpper(text);
-      expect(result).toMatch('HELLOWORLD');
-    });
+    // it("should transform from lowercase to uppercase", () => {
+    //   const lowerToUpper = TransformCase(fromLower, toUpper);
+    //   expect(lowerToUpper("helloworld"))
+    // })
   });
 });

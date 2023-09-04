@@ -9,5 +9,5 @@ export const toTitle: ToCaseFunction = words => words.map(capitalize).join(' ');
 export const toSentence: ToCaseFunction = words =>
   capitalize(words[0]) + ' ' + words.slice(1).join(' ');
 export const toConstant: ToCaseFunction = words => words.map(upper).join('_');
-export const toUpper: ToCaseFunction = words => upper(words.join(''));
-export const toLower: ToCaseFunction = words => lower(words.join(''));
+export const toUpper: ToCaseFunction = words => upper(words.join(' '));
+export const toLower: ToCaseFunction = words => lower(words.join(' '));
