@@ -1,12 +1,11 @@
 # 🔮 Case-Alchemy: Transform Text Cases with Magic
 
-[![npm package][npm-img]][npm-url]
-[![Build Status][build-img]][build-url]
-[![Downloads][downloads-img]][downloads-url]
-[![Issues][issues-img]][issues-url]
-[![Code Coverage][codecov-img]][codecov-url]
-[![Commitizen Friendly][commitizen-img]][commitizen-url]
-[![Semantic Release][semantic-release-img]][semantic-release-url]
+[![npm package](https://img.shields.io/npm/v/case-alchemy.svg)](https://www.npmjs.com/package/case-alchemy)
+[![Downloads](https://img.shields.io/npm/dt/case-alchemy.svg)](https://www.npmjs.com/package/case-alchemy)
+[![Issues](https://img.shields.io/github/issues/AbdoArafh/case-alchemy.svg)](https://github.com/AbdoArafh/case-alchemy/issues)
+[![Code Coverage](https://img.shields.io/codecov/c/github/AbdoArafh/case-alchemy.svg)](https://codecov.io/gh/AbdoArafh/case-alchemy)
+[![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Semantic Release](https://img.shields.io/badge/semantic-release-ff69b4.svg)](https://github.com/semantic-release/semantic-release)
 
 Case-Alchemy is a light-weight, fast, and tree-shakable JavaScript library that empowers developers to effortlessly convert text between different cases. Whether you need to transform camel case to kebab case, snake case to title case, or any other case transformation, Case-Alchemy's intuitive and powerful api make it a breeze.
 
